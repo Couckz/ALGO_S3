@@ -13,19 +13,12 @@ public class Estrin{
         }
     }
 
-    static int calculM(int n) {
-        if(n<4){
-            return 1;
-        } else {
-            return calculM(n/2)*2;
-        }
-    }
 
     static double evalue(double[] p, double al, int i, int j){
         if(j==i+1){
             return 0;
         } else {
-            int m=calculM(j-1);
+            int m=j-1;
             return expoRapide(al, m)*evalue(p, al, m+i, j) + evalue(p, al, i, m+i);
         }
     }
