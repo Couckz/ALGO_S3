@@ -2,13 +2,26 @@ import java.util.Arrays;
 
 class Fantomes{
     static boolean croise(int i, int j, int k, int l){
-        // A compléter
+         if ((i < k && k < j && j < l)  || (k < i && i < l && l < j)) {
+            return true;
+        }
         return false;
     }
 
+    /*Complexité en O(n^2) avec n=strat.length */
     static boolean estAdmissible(int[] strat){
-        // A compléter
-        return false;
+        for (int i = 0; i < strat.length; i++) {
+            for (int j = i + 1; j < strat.length; j++) {
+                int a = i;
+                int b = strat[i];
+                int c = j;
+                int d = strat[j];
+                if (croise(a, b, c, d)) {
+                    return false;  
+                }
+            }
+        }
+        return true;
     }
 
     static boolean evalue(int[] c, int i, int j){
