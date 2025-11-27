@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.lang.Math;
 
-@SuppressWarnings("unchained")
+@SuppressWarnings("unchecked")
 public class Point{
     double x;
     double y;
