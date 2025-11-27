@@ -15,10 +15,10 @@ public class Estrin{
 
 
     static double evalue(double[] p, double al, int i, int j){
-        if(j==i+1){
-            return 0;
+        if(i+1==j) {
+            return p[i];
         } else {
-            int m=j-1;
+            int m=(j-i)/2;
             return expoRapide(al, m)*evalue(p, al, m+i, j) + evalue(p, al, i, m+i);
         }
     }
