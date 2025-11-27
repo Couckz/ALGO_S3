@@ -128,9 +128,11 @@ public class Point{
         Point pivot = pointsX.get(pointsX.size()/2);
         ArrayList<Point>[] ppx = diviser(pointsX, pivot);
         ArrayList<Point>[] ppy = diviser(pointsY, pivot);
+
         Point[] res = pprocheDPR(ppx[0], ppy[0]);
         Point[] resD = pprocheDPR(ppx[1], ppy[1]);
         double d = res[0].distanceTo(res[1]);
+        
         if(resD[0].distanceTo(resD[1])<d) {
             res[0] = resD[0];
             res[1] = resD[1];
