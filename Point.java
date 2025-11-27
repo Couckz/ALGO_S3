@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Random;
-import java.lang.Math;
 
 @SuppressWarnings("unchecked")
 public class Point{
@@ -98,7 +97,7 @@ public class Point{
     }
 
     static ArrayList<Point>[] diviser(ArrayList<Point> points, Point pivot){
-        ArrayList<Point>[] res = new ArrayList<Point>[2];
+        ArrayList<Point>[] res = new ArrayList[2];
         res[0] = new ArrayList<Point>();
         res[1] = new ArrayList<Point>();
         for(Point p: points) {
@@ -109,10 +108,11 @@ public class Point{
                 }
         }
         return res;
+        
     }
 
     static ArrayList<Point> filtrer(ArrayList<Point> points, double x_mini, double x_maxi){
-        ArrayList<Point> res = new ArrayList<>(points);
+         ArrayList<Point> res = new ArrayList<Point>();
         for(Point p: points) {
             if(p.x > x_mini && p.x < x_maxi) {
                 res.add(p);
@@ -140,9 +140,12 @@ public class Point{
 
         for(int i=0;i<ybande.size();i++) {
             for(int j=i+1; j<Math.min(i+8,ybande.size());j++) {
+                if(ybande.get(i).distanceTo(ybande.get(j))<d) {
                 res[0] = ybande.get(i);
                 res[1] = ybande.get(j);
                 d = res[0].distanceTo(res[1]);
+                }
+                
             }
         }
         return res;
